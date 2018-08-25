@@ -4,5 +4,21 @@
   "main": "index.js",
   "repository": "git@github.com:pkoson/cryptocurrency-dashboard.git",
   "author": "piotrkoson <piotr@koson.pl>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0",
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "flow-bin": "^0.79.1",
+    "parcel-bundler": "^1.9.7"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.7.0"
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --public-url ./"
+  }
 }
