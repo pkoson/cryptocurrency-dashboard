@@ -1,0 +1,8 @@
+{
+  "name": "cryptocurrency-dashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:pkoson/cryptocurrency-dashboard.git",
+  "author": "piotrkoson <piotr@koson.pl>",
+  "license": "MIT"
+}
