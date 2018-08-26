@@ -25,5 +25,9 @@
     "start": "parcel index.html",
     "build": "parcel build index.html --public-url ./",
     "test": "jest"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.1.3",
+    "postcss-modules": "^1.3.2"
   }
 }
