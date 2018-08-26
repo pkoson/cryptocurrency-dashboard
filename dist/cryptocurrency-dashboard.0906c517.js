@@ -103,9 +103,75 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-console.log('hello world');
-},{}],"node_modules/parcel-bundler/lib/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"components/TableHeader/index.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+function _CustomElement() {
+  return Reflect.construct(HTMLElement, [], this.__proto__.constructor);
+}
+
+;
+Object.setPrototypeOf(_CustomElement.prototype, HTMLElement.prototype);
+Object.setPrototypeOf(_CustomElement, HTMLElement);
+
+var TableHeader = function (_CustomElement2) {
+  _inherits(TableHeader, _CustomElement2);
+
+  function TableHeader() {
+    _classCallCheck(this, TableHeader);
+
+    var _this = _possibleConstructorReturn(this, (TableHeader.__proto__ || Object.getPrototypeOf(TableHeader)).call(this));
+
+    var shadowRoot = _this.attachShadow({ mode: 'open' });
+    var wrapper = document.createElement('div');
+    var name = _this.getAttribute('name') || '';
+    var text = _this.getAttribute('text') || 'pass text attr!';
+    var direction = 0;
+
+    function handleClick() {
+      var event = new CustomEvent('sortBy' + name, { detail: { direction: direction } });
+      window.dispatchEvent(event);
+      direction = direction === 1 ? 0 : 1;
+    }
+
+    wrapper.textContent = text;
+    wrapper.addEventListener('click', function () {
+      return handleClick();
+    });
+    wrapper.setAttribute('class', 'table-header');
+    shadowRoot.appendChild(wrapper);
+    return _this;
+  }
+
+  return TableHeader;
+}(_CustomElement);
+
+exports.default = TableHeader;
+},{}],"index.js":[function(require,module,exports) {
+'use strict';
+
+var _index = require('./components/TableHeader/index');
+
+var _index2 = _interopRequireDefault(_index);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+window.addEventListener('sortByName', function (e) {
+  return console.log('object', e.detail);
+});
+
+window.customElements.define('table-header', _index2.default);
+},{"./components/TableHeader/index":"components/TableHeader/index.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -134,7 +200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '65334' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '50035' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -275,5 +341,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.parcelRequire, id);
   });
 }
-},{}]},{},["node_modules/parcel-bundler/lib/builtins/hmr-runtime.js","index.js"], null)
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
 //# sourceMappingURL=/cryptocurrency-dashboard.0906c517.map
