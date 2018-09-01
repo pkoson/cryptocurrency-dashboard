@@ -1,4 +1,7 @@
 {
   "presets": ["es2015", "flow"],
-  "plugins": ["transform-custom-element-classes"]
+  "plugins": [
+    "transform-custom-element-classes",
+    "transform-object-rest-spread"
+  ]
 }
