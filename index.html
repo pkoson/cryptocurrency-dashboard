@@ -1,10 +1,26 @@
 <html>
 <!-- TODO: add webcomponents pollyfill https://github.com/webcomponents/webcomponentsjs -->
 
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif
+    }
+
+    h1 {
+        text-align: center
+    }
+</style>
+
 <body>
     <h1>Cryptocurrency market</h1>
-    <table-header text="Test" name="Name">
-        <script src="./index.js"></script>
+    <table-header>
+        <column-header text="full name" name="Name"></column-header>
+        <column-header text="symbol" name="Symbol"></column-header>
+        <column-header text="current price" name="CurrentPrice"></column-header>
+        <column-header text="market cap" name="MarketCap"></column-header>
+        <column-header text="price trend" name="PriceTrend"></column-header>
+    </table-header>
+    <script src="./index.js"></script>
 </body>
 
 </html>
