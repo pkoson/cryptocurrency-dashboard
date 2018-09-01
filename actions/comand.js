@@ -1,9 +1,9 @@
 // @flow
-const GET_CURRENCIES = 'event@GET_CURRENCIES';
+export const GET_CURRENCIES = 'event@GET_CURRENCIES';
 
-export function getCurrencies(userId, data) {
+export function getCurrencies(payload) {
   return {
     type: GET_CURRENCIES,
-    data
+    payload
   };
 }
