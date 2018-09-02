@@ -1,6 +1,6 @@
 import ui from '../ui';
 
-import { GET_CURRENCIES } from '../../actions/comand';
+import { GET_CURRENCIES } from '../../actions/command';
 
 describe('ui reducer', () => {
   it('should handle GET_CURRENCIES action', () => {

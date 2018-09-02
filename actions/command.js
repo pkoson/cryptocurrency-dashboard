@@ -1,5 +1,5 @@
 // @flow
-export const GET_CURRENCIES = 'event@GET_CURRENCIES';
+export const GET_CURRENCIES = 'command@GET_CURRENCIES';
 
 export function getCurrencies(payload) {
   return {
