@@ -1,12 +1,12 @@
 // @flow
 import { takeEvery, all } from 'redux-saga/effects';
 import { GET_CURRENCIES } from '../actions/command';
-import { getCurrenciesSaga } from './getCurrencies';
+import { getCurrenciesListSaga } from './getCurrenciesList';
 
-function* watchGetCurrencies() {
-  yield takeEvery(GET_CURRENCIES, getCurrenciesSaga);
+function* watchgetCurrenciesList() {
+  yield takeEvery(GET_CURRENCIES, getCurrenciesListSaga);
 }
 
 export default function* rootSaga() {
-  yield all([watchGetCurrencies()]);
+  yield all([watchgetCurrenciesList()]);
 }

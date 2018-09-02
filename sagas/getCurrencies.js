@@ -2,7 +2,7 @@
 import { call, put } from 'redux-saga/effects';
 import { currencies } from '../actions/document';
 
-export function* getCurrenciesSaga() {
+export function* getCurrenciesListSaga() {
   try {
     const data = yield call(
       fetch,
