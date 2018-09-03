@@ -2,7 +2,7 @@
 import { call, put } from 'redux-saga/effects';
 import { currencies } from '../actions/document';
 
-export function* getCurrenciesListSaga() {
+export default function* getCurrenciesListSaga() {
   try {
     const data = yield call(
       fetch,
@@ -10,5 +10,7 @@ export function* getCurrenciesListSaga() {
     );
     const json = yield data.json();
     yield put(currencies(json.Data));
-  } catch (error) {}
+  } catch (error) {
+    // TODO: put error aciton
+  }
 }
