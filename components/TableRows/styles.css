@@ -1,0 +1,10 @@
+.row {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+}
+
+.item {
+  width: 20%;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
