@@ -6,7 +6,7 @@ export default function* getMultiplePrice({ list }) {
   try {
     const data = yield call(
       fetch,
-      `https://min-api.cryptocompare.com/data/pricemulti?fsyms=${list}&tsyms=USD`
+      `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${list}&tsyms=USD`
     );
     const json = yield data.json();
     yield put(currenciesPrice(json));
