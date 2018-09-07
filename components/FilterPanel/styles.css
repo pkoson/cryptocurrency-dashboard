@@ -1,0 +1,9 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+}
+.input {
+  padding: 5px;
+  margin-bottom: 16px;
+}

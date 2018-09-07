@@ -13,13 +13,16 @@
 
 <body>
     <h1>Cryptocurrency market</h1>
+    <filter-panel text="Full Name" filterBy="FullName"></filter-panel>
+    <filter-panel text="Symbol" filterBy="Name"></filter-panel>
     <table-header>
-        <column-header text="full name" name="Name"></column-header>
-        <column-header text="symbol" name="Symbol"></column-header>
-        <column-header text="current price" name="CurrentPrice"></column-header>
-        <column-header text="market cap" name="MarketCap"></column-header>
-        <column-header text="price trend" name="PriceTrend"></column-header>
+        <column-header text="full name" name="FullName"></column-header>
+        <column-header text="symbol" name="Name"></column-header>
+        <column-header text="current price" name="PRICE"></column-header>
+        <column-header text="market cap" name="MKTCAP"></column-header>
+        <column-header text="price trend" name="CHANGEPCT24HOUR"></column-header>
     </table-header>
+    <table-rows></table-rows>
     <script src="./index.js"></script>
 </body>
 
