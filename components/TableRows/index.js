@@ -42,17 +42,20 @@ export default class TableRows extends HTMLElement {
     }
     this.listElement.innerHTML = '';
     data.forEach(({ CoinInfo: { FullName, Name }, financialData }) => {
+      const changePTC = financialData && financialData.CHANGEPCT24HOUR.toFixed(2);
       const item = document.createElement('div');
       item.setAttribute('class', styles.row);
 
       // TODO: create helper for this
-      item.innerHTML = `<div class=${styles.item}>${FullName}</div><div class=${
-        styles.item
-      }>${Name}</div><div class=${styles.item}>${(financialData && financialData.PRICE)
-        || '-'}</div><div class=${styles.item}>${(financialData && Math.round(financialData.MKTCAP))
-        || '-'}</div><div class=${styles.item}>${(financialData
-        && financialData.CHANGEPCT24HOUR.toFixed(2))
-        || '-'} %</div>`;
+      item.innerHTML = `
+      <div class=${styles.item}>${FullName}</div>
+      <div class=${styles.item}>${Name}</div>
+      <div class=${styles.item}>${(financialData && financialData.PRICE) || '-'}</div>
+      <div class=${styles.item}>${(financialData && Math.round(financialData.MKTCAP)) || '-'}</div>
+      <div class="${styles.item} ${changePTC > 0 ? styles.green : styles.red}">${(financialData
+        && changePTC)
+        || '-'} %</div>
+      `;
       this.listElement.appendChild(item);
     });
     this.appendChild(this.listElement);

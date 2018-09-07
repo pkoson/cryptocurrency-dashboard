@@ -1,4 +1,9 @@
 .header {
   display: flex;
   justify-content: center;
+  background-color: #21d4fd;
+  background-image: linear-gradient(45deg, #21d4fd 0%, #b721ff 100%);
+  text-transform: uppercase;
+  border-radius: 4px;
+  /* box-shadow: 0px 8px 24px -5px rgba(0, 0, 0, 0.75); */
 }

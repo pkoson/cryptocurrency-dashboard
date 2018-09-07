@@ -8,3 +8,21 @@
   padding: 5px 10px;
   box-sizing: border-box;
 }
+.red {
+  color: #b10000;
+}
+.green {
+  color: #539600;
+}
+.red::after,
+.green::after {
+  vertical-align: text-top;
+  padding-left: 2px;
+  font-size: 0.75rem;
+}
+.red::after {
+  content: '\2193';
+}
+.green::after {
+  content: '\2191';
+}
