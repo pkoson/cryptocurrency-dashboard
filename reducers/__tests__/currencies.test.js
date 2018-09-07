@@ -1,9 +1,29 @@
 import currencies from '../currencies';
 
 import { CURRENCIES, CURRENCIES_PRICE } from '../../actions/document';
-import { SORT_CURRENCIES_BY } from '../../actions/command';
+import { SORT_CURRENCIES_BY, FILTER_BY } from '../../actions/command';
 
 describe('currencies reducer', () => {
+  const state = {
+    list: [
+      {
+        CoinInfo: {
+          Id: '1182',
+          Name: 'BTC',
+          FullName: 'Bitcoin',
+          financialData: { PRICE: 123 }
+        }
+      },
+      {
+        CoinInfo: {
+          Id: '1182',
+          Name: 'ETH',
+          FullName: 'Etherum',
+          financialData: { PRICE: 421 }
+        }
+      }
+    ]
+  };
   it('should handle CURRENCIES action', () => {
     const action = { type: CURRENCIES, payload: [{ test: 1 }] };
     expect(currencies(undefined, action).list).toEqual(action.payload);
@@ -127,24 +147,10 @@ describe('currencies reducer', () => {
 
   it('should handle SORT_CURRENCIES_BY Name action', () => {
     const action = { type: SORT_CURRENCIES_BY, payload: { name: 'Name', direction: 0 } };
-    const state = {
-      list: [
-        {
-          CoinInfo: {
-            Id: '1182',
-            Name: 'BTC',
-            financialData: { PRICE: 123 }
-          }
-        },
-        {
-          CoinInfo: {
-            Id: '1182',
-            Name: 'ETH',
-            financialData: { PRICE: 421 }
-          }
-        }
-      ]
-    };
     expect(currencies(state, action).list[0].CoinInfo.Name).toEqual('ETH');
+  });
+  it('should handle FILTER_BY', () => {
+    const action = { type: FILTER_BY, payload: { name: 'FullName', value: 'Bitcoin' } };
+    expect(currencies(state, action).filtredList[action.payload.name]).toEqual(['BTC']);
   });
 });
