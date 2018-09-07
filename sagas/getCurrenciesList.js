@@ -1,8 +1,9 @@
 // @flow
 import { call, put } from 'redux-saga/effects';
 import { currencies } from '../actions/document';
+import { getMultiplePrice } from '../actions/command';
 
-export default function* getCurrenciesListSaga() {
+export default function* getCurrenciesListSaga(): Generator<*, *, *> {
   try {
     const data = yield call(
       fetch,
@@ -10,6 +11,9 @@ export default function* getCurrenciesListSaga() {
     );
     const json = yield data.json();
     yield put(currencies(json.Data));
+
+    const currenciesArr = json.Data.map(item => item.CoinInfo.Name);
+    yield put(getMultiplePrice(currenciesArr));
   } catch (error) {
     // TODO: put error aciton
   }
