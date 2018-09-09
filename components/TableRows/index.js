@@ -13,7 +13,6 @@ export default class TableRows extends HTMLElement {
   constructor() {
     super();
     this.listElement = document.createElement('div');
-    this.setAttribute('class', styles.header);
     this.addStoreListener();
   }
 
@@ -42,11 +41,10 @@ export default class TableRows extends HTMLElement {
     }
     this.listElement.innerHTML = '';
     data.forEach(({ CoinInfo: { FullName, Name }, financialData }) => {
-      const changePTC = financialData && financialData.CHANGEPCT24HOUR.toFixed(2);
+      const changePTC = financialData && parseInt(financialData.CHANGEPCT24HOUR.toFixed(2), 10);
       const item = document.createElement('div');
       item.setAttribute('class', styles.row);
 
-      // TODO: create helper for this
       item.innerHTML = `
       <div class=${styles.item}>${FullName}</div>
       <div class=${styles.item}>${Name}</div>
