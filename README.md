@@ -1,5 +1,7 @@
 # cryptocurrency-dashboard
-Simple cryptocurrency dashboard without any ui library or framework 
+Simple cryptocurrency dashboard without any ui library or framework
+
+DEMO - http://koson.pl/cryptocurrency/
 
 # How to start
 1. install node
