@@ -8,18 +8,19 @@ export default class FilterPanel extends HTMLElement {
 
   constructor() {
     super();
-    this.filterBy = this.getAttribute('filterBy') || 'FullName';
-    const wrapper = document.createElement('div');
+    this.filterBy = this.getAttribute('filterBy');
+    const text = this.getAttribute('text') || '';
     const input = document.createElement('input');
-    wrapper.innerText = `Filter by ${this.filterBy}`;
-    wrapper.setAttribute('class', styles.wrapper);
+    this.innerText = `Filter by ${text}`;
+    this.setAttribute('class', styles.wrapper);
     input.setAttribute('class', styles.input);
     input.addEventListener('input', this.onInputChange);
-    wrapper.appendChild(input);
-    this.appendChild(wrapper);
+    this.appendChild(input);
   }
 
-  onInputChange = (e) => {
-    store.dispatch(filterByFullName({ name: this.filterBy, value: e.target.value }));
+  onInputChange = ({ target }: { target: EventTarget }): void => {
+    if (this.filterBy) {
+      store.dispatch(filterByFullName({ name: this.filterBy, value: target.value }));
+    }
   };
 }
