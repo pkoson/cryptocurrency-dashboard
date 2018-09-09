@@ -1,9 +1,10 @@
 <html>
 <!-- TODO: add webcomponents pollyfill https://github.com/webcomponents/webcomponentsjs -->
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     body {
-        font-family: Arial, Helvetica, sans-serif
+        font-family: Arial, Helvetica, sans-serif;
+        color: #383b56;
     }
 
     h1 {
@@ -13,16 +14,20 @@
 
 <body>
     <h1>Cryptocurrency market</h1>
-    <filter-panel text="Full Name" filterBy="FullName"></filter-panel>
-    <filter-panel text="Symbol" filterBy="Name"></filter-panel>
-    <table-header>
-        <column-header text="full name" name="FullName"></column-header>
-        <column-header text="symbol" name="Name"></column-header>
-        <column-header text="current price" name="PRICE"></column-header>
-        <column-header text="market cap" name="MKTCAP"></column-header>
-        <column-header text="price trend" name="CHANGEPCT24HOUR"></column-header>
-    </table-header>
-    <table-rows></table-rows>
+    <filter-panel-section>
+        <filter-panel text="Full Name" filterBy="FullName"></filter-panel>
+        <filter-panel text="Symbol" filterBy="Name"></filter-panel>
+    </filter-panel-section>
+    <table-wrapper>
+        <table-header>
+            <column-header text="full name" name="FullName"></column-header>
+            <column-header text="symbol" name="Name"></column-header>
+            <column-header text="current price" name="PRICE"></column-header>
+            <column-header text="market cap" name="MKTCAP"></column-header>
+            <column-header text="price trend" name="CHANGEPCT24HOUR"></column-header>
+        </table-header>
+        <table-rows></table-rows>
+    </table-wrapper>
     <script src="./index.js"></script>
 </body>
 
