@@ -5,4 +5,9 @@ Simple cryptocurrency dashboard without any ui library or framework
 1. install node
 2. run `yarn install` or `npm install`
 3. run `yarn start` or `npm start` for development
-4. run `yarn build` or `npm build` if you want to build app for production
+
+# Production
+1. run `yarn build` or `npm build` if you want to build app for production
+
+# Testing
+1. run `yarn test` or `npm test`
