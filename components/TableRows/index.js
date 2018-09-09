@@ -41,7 +41,7 @@ export default class TableRows extends HTMLElement {
     }
     this.listElement.innerHTML = '';
     data.forEach(({ CoinInfo: { FullName, Name }, financialData }) => {
-      const changePTC = financialData && parseInt(financialData.CHANGEPCT24HOUR.toFixed(2), 10);
+      const changePTC = financialData && financialData.CHANGEPCT24HOUR;
       const item = document.createElement('div');
       item.setAttribute('class', styles.row);
 
@@ -51,7 +51,7 @@ export default class TableRows extends HTMLElement {
       <div class=${styles.item}>${(financialData && financialData.PRICE) || '-'}</div>
       <div class=${styles.item}>${(financialData && Math.round(financialData.MKTCAP)) || '-'}</div>
       <div class="${styles.item} ${changePTC > 0 ? styles.green : styles.red}">${(financialData
-        && changePTC)
+        && changePTC.toFixed(2))
         || '-'} %</div>
       `;
       this.listElement.appendChild(item);

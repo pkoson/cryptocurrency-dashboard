@@ -18,7 +18,7 @@ export default class FilterPanel extends HTMLElement {
     this.appendChild(input);
   }
 
-  onInputChange = ({ target }: { target: EventTarget }): void => {
+  onInputChange = ({ target }: { target: Object }): void => {
     if (this.filterBy) {
       store.dispatch(filterByFullName({ name: this.filterBy, value: target.value }));
     }
