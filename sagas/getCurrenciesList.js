@@ -11,10 +11,9 @@ export default function* getCurrenciesListSaga(): Generator<*, *, *> {
     );
     const json = yield data.json();
     yield put(currencies(json.Data));
-
     const currenciesArr = json.Data.map(item => item.CoinInfo.Name);
     yield put(getMultiplePrice(currenciesArr));
   } catch (error) {
-    // TODO: put error aciton
+    console.error(error);
   }
 }
