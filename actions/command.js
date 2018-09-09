@@ -22,7 +22,7 @@ export function sortCurrenciesBy(payload: { name: string, direction: 0 | 1 }) {
     payload
   };
 }
-export function filterByFullName(payload: { name: string, value: EventTarget }) {
+export function filterByFullName(payload: { name: string, value: string }) {
   return {
     type: FILTER_BY,
     payload

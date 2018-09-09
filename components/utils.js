@@ -1,6 +1,6 @@
 // @flow
 
-function observeStore(store, select, onChange) {
+function observeStore(store: Object, select: Function, onChange: Function) {
   let currentState;
 
   function handleChange() {
